@@ -1,0 +1,28 @@
+---
+applications:
+  - name: sapBtpTest1
+    routes:
+        - route: sapBtpTest1-f7d9c15ctrial.cfapps.us10.hana.ondemand.com
+    memory: 1024M
+    instances: 1
+    path: target/foo.bar.cloud.app-application.jar
+    services:
+      - xsuaaTest
+      - MyDestination
+#    env:
+#      destinations: '[{"name":"MyDestination", "url" :"https://approuterc1-f7d9c15ctrial.cfapps.us10.hana.ondemand.com", "forwardAuthToken": false}]'
+
+
+  - name: approuter
+    routes:
+      - route: approuter-f7d9c15ctrial.cfapps.us10.hana.ondemand.com
+    path: approuter
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - xsuaaTest
+    env:
+      TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.us10.hana.ondemand.com'
+      destinations: '[{"name":"app-destination-n", "url" :"https://sapBtpTest1-f7d9c15ctrial.cfapps.us10.hana.ondemand.com", "forwardAuthToken": true}]'
+

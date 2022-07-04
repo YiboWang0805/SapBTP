@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="uft-8">
+    <title>SAP BTP Study</title>
+</head>
+<body>
+<h1> Hello World!!!</h1>
+<p th:text="${name}"></p>
+<a th:href="@{/getData}">Data Test : Hana cloud Service</a>
+<div><a th:href="@{/getApplications}">sandbox API Try</a></div>
+<!--<div><a th:href="@{/getApplications3}">API3</a></div>-->
+<div><a th:href="@{/getApplications2}">API HttpDestination</a></div>
+
+<!--<form th:action="@{/getApplications2}" th:method="post" >-->
+<!--    <input type="submit" th:value="API2"/>-->
+<!--</form>-->
+
+</body>
+</html>

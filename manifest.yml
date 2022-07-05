@@ -9,8 +9,6 @@ applications:
     services:
       - xsuaaTest
       - MyDestination
-#    env:
-#      destinations: '[{"name":"MyDestination", "url" :"https://approuterc1-f7d9c15ctrial.cfapps.us10.hana.ondemand.com", "forwardAuthToken": false}]'
 
 
   - name: approuter

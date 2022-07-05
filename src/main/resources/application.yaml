@@ -12,5 +12,3 @@ spring:
 #    prefix: [classpath:/templates/]
 #    suffix: .html
 
-
-
